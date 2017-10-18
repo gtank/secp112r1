@@ -1,0 +1,38 @@
+This is an example of how you can implement any Weierstrass curve with a = -3
+in Go. The curve secp112r1, providing a whopping 56 bits of security, is
+absolutely the worst such curve I could find a specification for. It should not
+be used for anything, ever.
+
+secp112r1 is described in the document "SEC 2: Recommended Elliptic Curve
+Domain Parameters, Version 1.0" from September 20, 2000:
+
+2.2.1 Recommended Parameters secp112r1
+
+The verifiably random elliptic curve domain parameters over F_p secp112r1 are
+specified by the sextuple T = ( p ; a ; b ; G ; n ; h ) where the finite
+field F p is defined by:
+
+    p = DB7C 2ABF62E3 5E668076 BEAD208B
+      = ( 2^128 - 3 ) / 76439
+
+The curve E: y^2 = x^3 + ax + b over F_p is defined by:
+
+    a = DB7C 2ABF62E3 5E668076 BEAD2088
+    b = 659E F8BA0439 16EEDE89 11702B22
+
+E was chosen verifiably at random as specified in ANSI X9.62 from the seed:
+
+    S = 00F50B02 8E4D696E 67687561 51752904 72783FB1
+
+The base point G in compressed form is:
+
+    G = 020948 7239995A 5EE76B55 F9C2F098
+
+and in uncompressed form is:
+
+    G = 04 09487239 995A5EE7 6B55F9C2 F098A89C E5AF8724 C0A23E0E 0FF77500
+
+Finally the order n of G and the cofactor are:
+
+    n = DB7C 2ABF62E3 5E7628DF AC6561C5
+    h = 01
